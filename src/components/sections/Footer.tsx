@@ -1,0 +1,113 @@
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <footer className="bg-dark text-white pt-20 pb-10 border-t border-blue-900/30">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Company Info */}
+          <div>
+            <img
+              alt="SyncTalents Logo"
+              className="h-10 mb-8 brightness-0 invert"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBivJdOxCLgBG2_1FtU1_91v2WJbzS5O3p7ALaPg1CiYvzcfmgNPGgPPJSaAd026lFFn4_PSHs6qCARctNwdsWoxDLwG_ijgDbyvzLrBCrQoiuq09JNCd_MpvstC5l0IJDb25d2BkQAiCLHlzde5eBbP9OekFTTNUDmzUW4pF8ay-8F4_RsOsvfcSmXxBnb9P_MZ-WO1EqeNV5IGUH6FYHg1DwY57J6FI9yLnaeKp07GwaXIPA-CLamO8vBQcXUACypIruwCZuia3Q"
+            />
+            <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+              We connect businesses with top Filipino talent through reliable, cost-effective, and scalable staffing solutions.
+            </p>
+            <div className="flex gap-4">
+              {["FB", "LI", "IG"].map((social) => (
+                <Link
+                  key={social}
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center hover:bg-accent transition duration-300"
+                >
+                  <span className="text-xs font-bold">{social}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+          
+          {/* Quick Links */}
+          <div>
+            <h5 className="font-bold text-lg mb-8">Quick Links</h5>
+            <ul className="space-y-4 text-gray-400 text-sm">
+              {["Why SyncTalents", "Roles We Fill", "How It Works", "About Us", "Resources", "Contact Us"].map((link) => (
+                <li key={link}>
+                  <Link href="#" className="hover:text-accent transition duration-200">
+                    {link}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Industries */}
+          <div>
+            <h5 className="font-bold text-lg mb-8">Industries</h5>
+            <ul className="space-y-4 text-gray-400 text-sm">
+              {["E-commerce", "Insurance", "BPO & Call Centers", "Healthcare", "Logistics", "Real Estate"].map((industry) => (
+                <li key={industry}>
+                  <Link href="#" className="hover:text-accent transition duration-200">
+                    {industry}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Contact Us */}
+          <div>
+            <h5 className="font-bold text-lg mb-8">Contact Us</h5>
+            <ul className="space-y-6">
+              <li className="flex items-start gap-4">
+                <span className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center text-accent">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                </span>
+                <div className="text-sm text-gray-400">
+                  <span className="block text-white font-semibold">Phone</span>
+                  +63 917 123 4567
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center text-accent">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </span>
+                <div className="text-sm text-gray-400">
+                  <span className="block text-white font-semibold">Email</span>
+                  hello@synctalents.com
+                </div>
+              </li>
+              <li className="flex items-start gap-4">
+                <span className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center text-accent">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </span>
+                <div className="text-sm text-gray-400">
+                  <span className="block text-white font-semibold">Address</span>
+                  Manila, Philippines
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        {/* Copyright Area */}
+        <div className="pt-8 border-t border-blue-900/30 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+          <p>© 2024 SyncTalents. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="#" className="hover:text-accent transition duration-200">Privacy Policy</Link>
+            <span className="text-gray-700">|</span>
+            <Link href="#" className="hover:text-accent transition duration-200">Terms of Service</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
