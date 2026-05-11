@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function CTABanner() {
   return (
-    <section className="bg-dark py-16 relative overflow-hidden">
+    <section className="bg-[#061b36] py-20 relative overflow-hidden">
       {/* Decorative Map Pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
         <img
           alt="Background Pattern"
           className="w-full h-full object-cover"
@@ -17,16 +17,8 @@ export default function CTABanner() {
       <div className="container mx-auto px-4 relative z-10 text-center md:text-left flex flex-col md:flex-row md:items-center justify-between gap-10 max-w-7xl">
         <div className="max-w-2xl">
           <p className="text-accent uppercase tracking-widest text-xs font-bold mb-4">Ready to scale your team?</p>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">Let's Build Your Offshore Team Today</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Let's Build Your Offshore Team Today</h2>
           <p className="text-blue-100 text-lg opacity-80 mb-4">Join hundreds of companies that trust SyncTalents to power their growth.</p>
-          
-          {/* Animated Arrow Element */}
-          <div className="hidden md:block">
-            <svg className="w-24 h-12 text-white ml-64 opacity-50 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 100 50">
-              <path d="M10 40 Q 50 10 90 40" strokeWidth="2"></path>
-              <path d="M85 30 L 90 40 L 80 42" strokeWidth="2"></path>
-            </svg>
-          </div>
         </div>
         
         <div className="flex flex-col items-center">
@@ -34,7 +26,7 @@ export default function CTABanner() {
             href="#get-started"
             className={cn(
               buttonVariants({ variant: "default", size: "lg" }),
-              "bg-white text-dark font-bold px-10 py-8 rounded-lg text-lg hover:bg-gray-100 transition shadow-2xl mb-4 w-full md:w-auto h-auto"
+              "bg-accent hover:bg-orange-600 text-white font-bold px-10 py-6 rounded-lg text-lg hover:-translate-y-0.5 transition-all duration-200 shadow-sm hover:shadow-md mb-4 w-full md:w-auto h-auto"
             )}
           >
             Get Qualified Candidates Now

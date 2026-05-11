@@ -10,111 +10,157 @@ import {
 
 export default function Hero() {
   return (
-    <section className="hero-bg relative py-12 md:py-24">
-      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl">
-        {/* Hero Content Left */}
-        <div className="animate-in fade-in slide-in-from-left duration-1000">
-          <div className="inline-block bg-blue-50 text-primary font-bold text-xs uppercase tracking-wider px-3 py-1 rounded-full mb-6 flex items-center gap-2 w-fit">
-            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1a1 1 0 112 0v1a1 1 0 11-2 0zM13.536 14.95a1 1 0 011.414 0l.707.707a1 1 0 11-1.414 1.414l-.707-.707a1 1 0 010-1.414zM6.464 14.95a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0z"></path>
-            </svg>
-            Staffing & Outsourcing Solutions
-          </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-primary mb-6 leading-tight">
-            Hire Pre-Vetted<br />Filipino Staff<br />in 7 Days
-          </h1>
-          <p className="text-lg text-gray-700 mb-8 max-w-lg">
-            Reduce hiring costs by up to 70% while scaling your team with skilled, reliable professionals.
-          </p>
-          <ul className="space-y-4 mb-8">
-            {[
-              "Pre-screened & qualified candidates",
-              "Fast deployment (7-14 days)",
-              "Flexible roles for your business needs"
-            ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <span className="bg-primary text-white rounded-full p-1">
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"></path>
-                  </svg>
-                </span>
-                <span className="font-semibold text-gray-800">{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-sm text-gray-500 italic">
-            Trusted by growing companies in the Philippines and around the world.
-          </p>
-        </div>
+    <section className="relative bg-white overflow-hidden">
+      {/* Right-side image - positioned absolutely to fill right half */}
+      <div className="hidden lg:block absolute top-0 right-0 w-[60%] h-full z-0">
+        <img
+          src="/images/final_team_hero.png"
+          alt="SyncTalents Team"
+          className="h-full w-full object-cover object-[25%_25%]"
+        />
+        {/* Narrower left-edge fade to reveal more faces */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent w-[30%]"></div>
+      </div>
 
-        {/* Hero Lead Form Right */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-auto w-full border border-gray-100 animate-in fade-in slide-in-from-right duration-1000">
-          <h3 className="text-2xl font-bold text-center mb-1">Get Qualified Candidates</h3>
-          <p className="text-center text-xs text-gray-500 mb-6">Tell us what you need and we'll take care of the rest.</p>
-          <form className="space-y-4">
-            <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1 uppercase">Full Name<span className="text-red-500">*</span></label>
-              <Input placeholder="Enter your full name" className="text-sm" />
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start py-12 lg:py-20">
+
+          {/* Left Content - col 1-5 */}
+          <div className="lg:col-span-5 py-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6 border border-blue-100">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+              Staffing & Outsourcing Solutions
             </div>
-            <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1 uppercase">Company Name<span className="text-red-500">*</span></label>
-              <Input placeholder="Enter your company name" className="text-sm" />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1 uppercase">Work Email<span className="text-red-500">*</span></label>
-              <Input placeholder="Enter your work email" type="email" className="text-sm" />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-gray-700 mb-1 uppercase">Role Needed<span className="text-red-500">*</span></label>
-                <Select>
-                  <SelectTrigger className="text-sm">
-                    <SelectValue placeholder="Select role" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="va">Virtual Assistant</SelectItem>
-                    <SelectItem value="support">Customer Support</SelectItem>
-                    <SelectItem value="data">Data Entry</SelectItem>
-                    <SelectItem value="ops">Operations</SelectItem>
-                  </SelectContent>
-                </Select>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-[#0d3a71] mb-6 leading-[1.05] tracking-tight">
+              Hire Pre-Vetted<br />
+              Filipino Staff<br />
+              <span className="text-blue-600">in 7 Days</span>
+            </h1>
+
+            <p className="text-base text-gray-500 mb-8 max-w-md leading-relaxed">
+              Reduce hiring costs by up to 70% while scaling your team with skilled, reliable professionals.
+            </p>
+
+            <ul className="space-y-3 mb-8">
+              {[
+                "Pre-screened & qualified candidates",
+                "Fast deployment (7-14 days)",
+                "Flexible roles for your business needs"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center">
+                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"></path>
+                    </svg>
+                  </div>
+                  <span className="text-sm font-semibold text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-xs text-gray-400 font-medium">
+              Trusted by growing companies in the Philippines<br />and around the world.
+            </p>
+          </div>
+
+          {/* Mobile image - only shows on small screens */}
+          <div className="lg:hidden w-full rounded-2xl overflow-hidden mb-6">
+            <img
+              src="/images/final_team_hero.png"
+              alt="SyncTalents Team"
+              className="w-full h-56 sm:h-64 object-cover object-[25%_25%]"
+            />
+          </div>
+
+          {/* Right Form - pushed to far right, overlapping the image area */}
+          <div className="lg:col-span-7 flex justify-center lg:justify-end">
+            <div className="bg-white rounded-2xl p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100 w-full sm:max-w-[400px] lg:max-w-[370px] relative z-20 lg:-mr-8">
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-1 tracking-tight">Get Qualified Candidates</h3>
+                <p className="text-[11px] text-gray-400">Tell us what you need and we&apos;ll take care of the rest.</p>
               </div>
-              <div>
-                <label className="block text-xs font-bold text-gray-700 mb-1 uppercase">Team Size<span className="text-red-500">*</span></label>
-                <Select>
-                  <SelectTrigger className="text-sm">
-                    <SelectValue placeholder="Select size" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1-5">1-5</SelectItem>
-                    <SelectItem value="6-20">6-20</SelectItem>
-                    <SelectItem value="21+">21+</SelectItem>
-                  </SelectContent>
-                </Select>
+
+              <form className="space-y-4">
+                <div className="space-y-1">
+                  <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">Full Name<span className="text-red-500 ml-0.5">*</span></label>
+                  <Input placeholder="Enter your full name" className="bg-gray-50/50 border-gray-200 focus:bg-white h-10 rounded-lg text-sm" />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">Company Name<span className="text-red-500 ml-0.5">*</span></label>
+                  <Input placeholder="Enter your company name" className="bg-gray-50/50 border-gray-200 focus:bg-white h-10 rounded-lg text-sm" />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">Email<span className="text-red-500 ml-0.5">*</span></label>
+                  <Input placeholder="Enter your email" type="email" className="bg-gray-50/50 border-gray-200 focus:bg-white h-10 rounded-lg text-sm" />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1">
+                    <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">Role Needed<span className="text-red-500 ml-0.5">*</span></label>
+                    <Select>
+                      <SelectTrigger className="bg-gray-50/50 border-gray-200 focus:bg-white h-10 rounded-lg text-xs">
+                        <SelectValue placeholder="Select role" />
+                      </SelectTrigger>
+                      <SelectContent className="min-w-[280px]">
+                        <SelectItem value="support">🧑‍💼 Customer Support & CX</SelectItem>
+                        <SelectItem value="va">🖥️ Virtual Assistants (VA)</SelectItem>
+                        <SelectItem value="admin">📊 Back Office & Admin</SelectItem>
+                        <SelectItem value="sales">📣 Sales & Lead Generation</SelectItem>
+                        <SelectItem value="ecommerce">🛒 E-commerce & Marketplace Support</SelectItem>
+                        <SelectItem value="finance">📈 Finance & Accounting Support</SelectItem>
+                        <SelectItem value="logistics">📦 Logistics & Operations</SelectItem>
+                        <SelectItem value="healthcare">🏥 Healthcare</SelectItem>
+                        <SelectItem value="specialized">🧠 Specialized</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">Estimated Team Size<span className="text-red-500 ml-0.5">*</span></label>
+                    <Select>
+                      <SelectTrigger className="bg-gray-50/50 border-gray-200 focus:bg-white h-10 rounded-lg text-xs">
+                        <SelectValue placeholder="Select team size" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="1-5">1-5</SelectItem>
+                        <SelectItem value="6-20">6-20</SelectItem>
+                        <SelectItem value="21+">21+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-accent hover:bg-orange-600 text-white font-bold py-6 rounded-lg shadow-md transition-all uppercase text-xs tracking-widest mt-1">
+                  Get Qualified Candidates
+                </Button>
+              </form>
+
+              <div className="mt-6">
+                <div className="relative flex py-1 items-center">
+                  <div className="flex-grow border-t border-gray-100"></div>
+                  <span className="flex-shrink mx-3 text-gray-400 text-[9px] font-bold uppercase tracking-widest">or</span>
+                  <div className="flex-grow border-t border-gray-100"></div>
+                </div>
+
+                <div className="flex gap-3 mt-4">
+                  <Button variant="outline" className="flex-1 h-10 border-green-200 text-green-700 hover:bg-green-50 text-[10px] font-bold gap-2 rounded-lg transition-all">
+                    <img alt="WhatsApp" className="w-4 h-4" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
+                    Chat on WhatsApp
+                  </Button>
+                  <Button variant="outline" className="flex-1 h-10 border-blue-200 text-blue-700 hover:bg-blue-50 text-[10px] font-bold gap-2 rounded-lg transition-all">
+                    <img alt="Messenger" className="w-4 h-4" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" />
+                    Message Us
+                  </Button>
+                </div>
               </div>
-            </div>
-            <Button className="w-full bg-accent hover:bg-orange-600 text-white font-bold py-6 rounded-md transition duration-200 uppercase text-sm tracking-wide shadow-lg shadow-orange-500/30">
-              Get Qualified Candidates
-            </Button>
-          </form>
-          
-          <div className="mt-6">
-            <div className="relative flex py-2 items-center">
-              <div className="flex-grow border-t border-gray-200"></div>
-              <span className="flex-shrink mx-4 text-gray-400 text-xs uppercase">or</span>
-              <div className="flex-grow border-t border-gray-200"></div>
-            </div>
-            <div className="flex gap-4 mt-4">
-              <Button variant="outline" className="flex-1 border-green-500 text-green-600 hover:bg-green-50 text-xs font-bold gap-2">
-                <img alt="WhatsApp" className="w-4 h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYbZkttnoKxIsYwJQ-t58HFPkvcDy5YOFDXZqlJKALDzMwh7_H4gaGbcnjHS8DK0l9RkyuxehpLbYnxX_ju4MKxPWR7Ojpw9q8v3rMAMX8F-fQ0F_Z2K_xcR9uFLwJhvajxkg1LZKtckuN-TDNg_3lvZ4xXQI-NL5SM7ahS-8-4Tlm9kYAMrVCHMy_gHsaFNWMc8WVjmFU24Fwpn8aoU8clm37ygFOZfYY9Xsm8r1MoF_eb7K6yIVs8cHawAXxI9NynhL6MuSIH9I" />
-                WhatsApp
-              </Button>
-              <Button variant="outline" className="flex-1 border-blue-500 text-blue-600 hover:bg-blue-50 text-xs font-bold gap-2">
-                <img alt="Messenger" className="w-4 h-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM2G_5666pPwqru43-sWlmcja66SeuXNFqpi95cZnr-x1MoeU8O6K1HeyhR8JDr9Wlsj5U80QkWXynt2jm___fVjuqzDVMbfVM3D7GnEUEnsQTznRnub1R3fUEtYtOGvTtN_uLCUL0Nc_ejsUFv8j8WLKMQEGxcmgersuveoXl9MLSmxel6A8Ntvs_H3kqcuR7QA0AJXA5WrgMWZfQzxLLtYi5Ddx9QObk_OY-mr6Wkpow-cjHS0XmXszciaCF4CkkMCtc9OYQyyw" />
-                Message Us
-              </Button>
             </div>
           </div>
+
         </div>
       </div>
     </section>

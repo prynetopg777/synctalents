@@ -33,23 +33,23 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-white overflow-hidden">
+    <section id="how-it-works" className="py-24 bg-gray-50/50 overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-20">How It Works</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#0d3a71] mb-16 tracking-tight">How It Works</h2>
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
           {steps.map((step, i) => (
             <div key={i} className="relative flex flex-col items-center text-center z-10 group">
               {i < steps.length - 1 && (
-                <div className="step-line hidden md:block absolute w-full left-1/2 top-6 h-0.5 bg-gray-200 -z-10 group-hover:bg-primary transition duration-500"></div>
+                <div className="step-line hidden md:block absolute w-full left-1/2 top-6 h-0.5 -z-10"></div>
               )}
-              <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg mb-8 relative z-20 shadow-md">
+              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-black text-lg mb-8 relative z-20 shadow-md">
                 {step.number}
               </div>
-              <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition duration-300">
+              <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 {step.icon}
               </div>
-              <h4 className="font-bold text-xl mb-4">{step.title}</h4>
-              <p className="text-sm text-gray-500 leading-relaxed max-w-xs">{step.desc}</p>
+              <h4 className="font-black text-lg mb-3 text-gray-900 tracking-tight">{step.title}</h4>
+              <p className="text-gray-500 leading-relaxed max-w-xs text-sm font-medium">{step.desc}</p>
             </div>
           ))}
         </div>

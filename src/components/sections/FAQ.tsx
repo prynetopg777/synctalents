@@ -16,17 +16,29 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-16">Frequently Asked Questions</h2>
-        <div className="max-w-3xl mx-auto">
-          <Accordion className="w-full space-y-4">
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="bg-white px-6 rounded-lg border border-gray-200 shadow-sm overflow-hidden mb-4 last:mb-0">
-                <AccordionTrigger className="hover:no-underline font-semibold text-gray-800 text-left py-6">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#0d3a71] mb-16 tracking-tight">Frequently Asked Questions</h2>
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
+          <Accordion className="w-full">
+            {faqs.slice(0, 3).map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`} className="border-b border-gray-100 last:border-b-0">
+                <AccordionTrigger className="hover:no-underline font-bold text-base text-gray-900 text-left py-6">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 pb-6">
+                <AccordionContent className="text-gray-500 pb-6 text-sm leading-relaxed">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Accordion className="w-full">
+            {faqs.slice(3).map((faq, i) => (
+              <AccordionItem key={i + 3} value={`item-${i + 3}`} className="border-b border-gray-100 last:border-b-0">
+                <AccordionTrigger className="hover:no-underline font-bold text-base text-gray-900 text-left py-6">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-500 pb-6 text-sm leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

@@ -30,17 +30,23 @@ export default function ValueProps() {
   ];
 
   return (
-    <section id="why" className="py-20 bg-white">
+    <section id="why" className="py-24 bg-gray-50/50">
       <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-16">Why Companies Choose SyncTalents</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#0d3a71] mb-16 tracking-tight">Why Companies Choose SyncTalents</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {props.map((prop, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
-              <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mb-6 text-primary shadow-sm hover:scale-110 transition duration-300">
-                {prop.icon}
+            <div 
+              key={i} 
+              className="flex flex-col items-center text-center p-10 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12">
+                  {prop.icon}
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-4">{prop.title}</h3>
-              <p className="text-gray-600 leading-relaxed max-w-xs">{prop.description}</p>
+              
+              <h3 className="text-xl font-black mb-4 text-gray-900 tracking-tight">{prop.title}</h3>
+              <p className="text-gray-500 leading-relaxed font-medium text-sm">{prop.description}</p>
             </div>
           ))}
         </div>

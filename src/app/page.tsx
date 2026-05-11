@@ -7,10 +7,12 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
+import AutoScroll from "@/components/ui/AutoScroll";
 
 export default function Home() {
   return (
     <>
+      <AutoScroll />
       <Header />
       <main>
         <Hero />

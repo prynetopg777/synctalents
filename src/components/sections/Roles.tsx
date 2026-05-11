@@ -53,15 +53,18 @@ export default function Roles() {
   ];
 
   return (
-    <section id="roles" className="py-20 bg-gray-50">
+    <section id="roles" className="py-24 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Roles We Can Fill</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#0d3a71] mb-16 tracking-tight">Roles We Can Fill</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           {roles.map((role, i) => (
-            <div key={i} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center flex flex-col items-center hover:shadow-md transition duration-300">
-              <div className="mb-6 text-primary">{role.icon}</div>
-              <h4 className="font-bold text-lg mb-2">{role.title}</h4>
-              <p className="text-xs text-gray-500">{role.desc}</p>
+            <div 
+              key={i} 
+              className="bg-white p-8 rounded-[1.5rem] border border-gray-50 text-center flex flex-col items-center shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-all duration-300 group"
+            >
+              <div className="mb-8 text-blue-500 group-hover:scale-110 transition-transform duration-300">{role.icon}</div>
+              <h4 className="font-black text-[15px] mb-3 text-gray-900 tracking-tight">{role.title}</h4>
+              <p className="text-[12px] text-gray-400 font-medium leading-relaxed px-2">{role.desc}</p>
             </div>
           ))}
         </div>
@@ -70,7 +73,7 @@ export default function Roles() {
             href="#all-roles"
             className={cn(
               buttonVariants({ variant: "outline" }),
-              "border-2 border-primary text-primary px-8 py-6 rounded-md font-bold hover:bg-primary hover:text-white transition h-auto"
+              "border border-blue-100 bg-white text-blue-700 px-10 py-3 rounded-lg font-black uppercase text-[10px] tracking-widest hover:bg-blue-50 transition-all duration-300 h-auto"
             )}
           >
             View More Roles

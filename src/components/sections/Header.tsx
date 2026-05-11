@@ -1,27 +1,51 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between max-w-7xl">
+    <header className={cn(
+      "sticky top-0 z-50 transition-all duration-500 border-b",
+      scrolled 
+        ? "bg-primary/95 backdrop-blur-md py-1.5 border-blue-800 shadow-lg" 
+        : "bg-white py-3 border-gray-100 shadow-sm"
+    )}>
+      <div className="container mx-auto px-4 flex items-center justify-between max-w-7xl">
         {/* Logo Container */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center group">
           <img
             alt="SyncTalents Logo"
-            className="h-10"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj4tSLkwNRoazVtI50EQh4MVaEI4d3RoLRmxnj5UUi7-7-qVNidmGvCZua_VNzsDUNA-zwwAMoImm5PYuNS9QB9bvRrCHeH57lCCdtCYBfyBWJoL1NPM4sQhCDU9mo4KxkSZy66AFpBcP12yuJhKp32PKsuMSdLdrhchTHuFh_0H7jeW4r4M_-cPHD4NecKbOmYnasshz4Vt41F4EuxWKqvX6-Pmq9CWbMekFbHZJwE5SjgsYXbRo-sM6Hdq1zK_2AfFAqnw38u-w"
+            className={cn(
+              "h-10 transition-all duration-500 brightness-0",
+              scrolled ? "invert" : ""
+            )}
+            src="/images/synctalents_logo.png"
           />
         </Link>
         
         {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-          <Link href="#why" className="hover:text-primary transition">Why SyncTalents</Link>
-          <Link href="#roles" className="hover:text-primary transition">Roles We Fill</Link>
-          <Link href="#how-it-works" className="hover:text-primary transition">How It Works</Link>
-          <Link href="#about" className="hover:text-primary transition">About Us</Link>
-          <Link href="#resources" className="hover:text-primary transition">Resources</Link>
+        <nav className={cn(
+          "hidden md:flex space-x-6 text-[13px] font-medium transition-colors duration-500",
+          scrolled ? "text-white/80" : "text-gray-600"
+        )}>
+          <Link href="#why" className={cn("transition-colors duration-200", scrolled ? "hover:text-white" : "hover:text-primary")}>Why SyncTalents</Link>
+          <Link href="#roles" className={cn("transition-colors duration-200", scrolled ? "hover:text-white" : "hover:text-primary")}>Roles We Fill</Link>
+          <Link href="#how-it-works" className={cn("transition-colors duration-200", scrolled ? "hover:text-white" : "hover:text-primary")}>How It Works</Link>
+          <Link href="#about" className={cn("transition-colors duration-200", scrolled ? "hover:text-white" : "hover:text-primary")}>About Us</Link>
+          <Link href="#resources" className={cn("transition-colors duration-200", scrolled ? "hover:text-white" : "hover:text-primary")}>Resources</Link>
         </nav>
         
         {/* CTA Button */}
@@ -30,7 +54,10 @@ export default function Header() {
             href="#book"
             className={cn(
               buttonVariants({ variant: "default" }),
-              "bg-primary hover:bg-blue-900 shadow-lg shadow-blue-900/20 font-semibold"
+              "text-white shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 font-semibold",
+              scrolled 
+                ? "bg-accent hover:bg-orange-600 px-8 py-6 text-base scale-105" 
+                : "bg-accent hover:bg-orange-600 px-6 text-sm"
             )}
           >
             Book a Call
