@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function CTABanner() {
   return (
-    <section className="bg-[#061b36] py-20 relative overflow-hidden">
+    <section id="book" className="bg-[#061b36] py-20 lg:py-32 xl:py-40 relative overflow-hidden">
       {/* Decorative Map Pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none z-0">
         <img
@@ -14,7 +14,7 @@ export default function CTABanner() {
         />
       </div>
       
-      <div className="container mx-auto px-4 relative z-10 text-center md:text-left flex flex-col md:flex-row md:items-center justify-between gap-10 max-w-7xl">
+      <div className="container mx-auto px-4 relative z-10 text-center md:text-left flex flex-col md:flex-row md:items-center justify-between gap-10 max-w-[1600px]">
         <div className="max-w-2xl">
           <p className="text-accent uppercase tracking-widest text-xs font-bold mb-4">Ready to scale your team?</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Let's Build Your Offshore Team Today</h2>
@@ -32,16 +32,6 @@ export default function CTABanner() {
             Get Qualified Candidates Now
           </Link>
           
-          <div className="flex items-center gap-4 py-2">
-            <span className="h-px w-8 bg-gray-600"></span>
-            <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">or</span>
-            <span className="h-px w-8 bg-gray-600"></span>
-          </div>
-          
-          <Link href="#whatsapp" className="flex items-center gap-2 text-green-400 font-bold hover:text-green-300 transition group">
-            <img alt="WhatsApp" className="w-6 h-6 group-hover:scale-110 transition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8FTGF2ZRXxc9vNhLiO1qG8rHsPXk9ykNWwgKp6QtmMx5sPNjZcU_eVAkYtEVM6o4qwcJMOkDX7B6pP8ula5GKzB2AW5q_WgzIdbzVfb9q6pMbqz5UmYJOJ_pfpnb00nyacBN9LxF2RvHa2Ech72xKawXYhEV95Pu33pgFmGDvlmIoAyheD06zL9aieUGYV_-hSf-g_Qnx5MUzaMq_BP8O2cClfHh_yJIXZJuRs2B2w7FbLzxrHIDkjnSJlFbAL55VnsrJkDovAnY" />
-            Chat with us on WhatsApp
-          </Link>
         </div>
       </div>
     </section>

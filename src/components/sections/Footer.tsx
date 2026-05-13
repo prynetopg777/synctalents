@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#061b36] text-white pt-20 pb-10 border-t border-blue-900/30">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container mx-auto px-4 max-w-[1600px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
           <div>
@@ -32,23 +32,35 @@ export default function Footer() {
           <div>
             <h5 className="font-bold text-lg mb-8">Quick Links</h5>
             <ul className="space-y-4 text-gray-400 text-sm">
-              {["Why SyncTalents", "Roles We Fill", "How It Works", "About Us", "Resources", "Contact Us"].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="hover:text-accent transition duration-200">
-                    {link}
+              {[
+                { name: "Why SyncTalents", href: "#why" },
+                { name: "Roles We Fill", href: "#roles" },
+                { name: "How It Works", href: "#how-it-works" },
+                { name: "FAQs", href: "#faq" },
+                { name: "Contact Us", href: "#hero" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-accent transition duration-200">
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           
-          {/* Industries */}
+          {/* Industries We Serve */}
           <div>
             <h5 className="font-bold text-lg mb-8">Industries</h5>
             <ul className="space-y-4 text-gray-400 text-sm">
-              {["E-commerce", "Insurance", "BPO & Call Centers", "Healthcare", "Logistics", "Real Estate"].map((industry) => (
+              {[
+                "E-commerce", 
+                "BPO & Call Centers", 
+                "Healthcare", 
+                "Logistics", 
+                "Financial Services"
+              ].map((industry) => (
                 <li key={industry}>
-                  <Link href="#" className="hover:text-accent transition duration-200">
+                  <Link href="#roles" className="hover:text-accent transition duration-200">
                     {industry}
                   </Link>
                 </li>

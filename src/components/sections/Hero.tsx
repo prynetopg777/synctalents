@@ -10,7 +10,7 @@ import {
 
 export default function Hero() {
   return (
-    <section className="relative bg-white overflow-hidden">
+    <section id="hero" className="relative bg-white overflow-hidden lg:min-h-[90vh] flex items-center">
       {/* Right-side image - positioned absolutely to fill right half */}
       <div className="hidden lg:block absolute top-0 right-0 w-[60%] h-full z-0">
         <img
@@ -22,8 +22,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent w-[30%]"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start py-12 lg:py-20">
+      <div className="container mx-auto px-4 relative z-10 max-w-[1600px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start py-12 lg:py-32 xl:py-40">
 
           {/* Left Content - col 1-5 */}
           <div className="lg:col-span-5 py-4">

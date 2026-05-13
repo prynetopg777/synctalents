@@ -4,7 +4,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function FAQ() {
   const faqs = [
@@ -17,8 +19,8 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-[#fdfcfb]">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section id="faq" className="py-16 lg:py-32 xl:py-40 bg-[#fdfcfb]">
+      <div className="container mx-auto px-6 max-w-[1600px]">
         
         {/* Header Section */}
         <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-20">
@@ -36,7 +38,7 @@ export default function FAQ() {
 
         {/* Accordion Section */}
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full space-y-3 lg:space-y-4">
+          <Accordion className="w-full space-y-3 lg:space-y-4">
             {faqs.map((faq, i) => (
               <AccordionItem 
                 key={i} 
@@ -60,11 +62,15 @@ export default function FAQ() {
             Still have questions?
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button 
-              className="w-full sm:w-auto bg-[#0d3a71] hover:bg-blue-900 text-white font-black px-10 py-7 lg:py-8 rounded-xl transition-all duration-300 text-sm lg:text-base shadow-lg shadow-blue-900/10"
+            <Link 
+              href="#hero"
+              className={cn(
+                buttonVariants({ variant: "default" }),
+                "w-full sm:w-auto bg-[#0d3a71] hover:bg-blue-900 text-white font-black px-10 py-7 lg:py-8 rounded-xl transition-all duration-300 text-sm lg:text-base shadow-lg shadow-blue-900/10 h-auto"
+              )}
             >
-              Get in touch
-            </Button>
+              Contact Us
+            </Link>
           </div>
         </div>
 

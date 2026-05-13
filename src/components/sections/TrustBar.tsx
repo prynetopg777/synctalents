@@ -8,8 +8,8 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="py-10 bg-white border-b border-gray-100">
-      <div className="container mx-auto px-4 max-w-7xl text-center">
+    <section className="py-10 lg:py-20 xl:py-28 bg-white border-b border-gray-100">
+      <div className="container mx-auto px-4 max-w-[1600px] text-center">
         <h2 className="text-[10px] font-black text-gray-400 uppercase tracking-[0.25em] mb-8">Trusted By Growing Companies</h2>
         <div className="flex flex-nowrap justify-start md:justify-center items-center gap-8 md:gap-16 lg:gap-20 overflow-x-auto pb-4 md:pb-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full px-2 md:px-0">
           {logos.map((logo) => (

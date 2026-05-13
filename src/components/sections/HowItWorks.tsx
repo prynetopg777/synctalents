@@ -32,8 +32,8 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-16 lg:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section id="how-it-works" className="py-16 lg:py-32 xl:py-40 bg-white overflow-hidden">
+      <div className="container mx-auto px-6 max-w-[1600px]">
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-16">
           
           {/* Left Column */}
@@ -85,15 +85,7 @@ export default function HowItWorks() {
                 <p className="text-xs lg:text-sm text-gray-500 font-medium leading-relaxed mb-4 lg:mb-6 max-w-[85%] lg:max-w-none relative z-10">
                   {step.desc}
                 </p>
-                <Link 
-                  href="#learn-more" 
-                  className="text-[10px] lg:text-xs font-black uppercase tracking-widest text-blue-600 hover:text-blue-700 inline-flex items-center gap-2 relative z-10"
-                >
-                  Learn more
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+
               </div>
             ))}
           </div>

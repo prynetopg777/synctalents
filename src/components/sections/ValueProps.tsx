@@ -15,8 +15,8 @@ export default function ValueProps() {
   ];
 
   return (
-    <section id="why" className="py-16 lg:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section id="why" className="py-16 lg:py-32 xl:py-40 bg-white overflow-hidden">
+      <div className="container mx-auto px-6 max-w-[1600px]">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           
           {/* Left Column: Image and Performance Card */}
@@ -64,7 +64,7 @@ export default function ValueProps() {
           <div className="w-full lg:w-1/2 text-left">
             <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-5 lg:mb-6 leading-tight tracking-tight">
               Tailored Talent Solutions <br />
-              <span className="text-blue-600">with SyncTalents</span>
+              <span>with</span> <span className="text-blue-600">SyncTalents</span>
             </h2>
             
             <p className="text-base lg:text-lg text-gray-600 mb-8 lg:mb-10 leading-relaxed font-medium">
