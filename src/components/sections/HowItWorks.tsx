@@ -32,16 +32,16 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-16 lg:py-32 xl:py-40 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 max-w-[1600px]">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-16">
+    <section id="how-it-works" className="py-[var(--section-py)] bg-white overflow-hidden">
+      <div className="container mx-auto px-6 max-w-[var(--container-max)]">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[var(--section-gap)]">
           
           {/* Left Column */}
           <div className="w-full lg:w-1/2">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] lg:text-xs font-bold uppercase tracking-widest mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[0.625rem] lg:text-xs font-bold uppercase tracking-widest mb-6">
               Our Process
             </span>
-            <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 lg:mb-8 leading-tight tracking-tight">
+            <h2 className="text-3xl lg:text-[clamp(2.5rem,5vw,3.5rem)] font-black text-gray-900 mb-6 lg:mb-8 leading-tight tracking-tight">
               Comprehensive care <br className="hidden lg:block" />
               for every stage of <br className="hidden lg:block" />
               <span className="text-blue-600">your business</span>
@@ -58,7 +58,7 @@ export default function HowItWorks() {
                   </div>
                 ))}
               </div>
-              <div className="text-[12px] lg:text-sm font-bold text-gray-900">
+              <div className="text-[0.75rem] lg:text-sm font-bold text-gray-900">
                 <span className="text-blue-600">17k+</span> satisfied partners
               </div>
             </div>

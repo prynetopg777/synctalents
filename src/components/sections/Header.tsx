@@ -23,7 +23,7 @@ export default function Header() {
         ? "bg-primary/95 backdrop-blur-md py-1.5 border-blue-800 shadow-lg" 
         : "bg-white py-3 border-gray-100 shadow-sm"
     )}>
-      <div className="container mx-auto px-4 flex items-center justify-between max-w-[1600px]">
+      <div className="container mx-auto px-4 flex items-center justify-between max-w-[var(--container-max)]">
         {/* Logo Container */}
         <Link href="/" className="flex items-center group">
           <img
@@ -38,7 +38,7 @@ export default function Header() {
         
         {/* Navigation Links */}
         <nav className={cn(
-          "hidden md:flex space-x-6 text-[13px] font-medium transition-colors duration-500",
+          "hidden md:flex space-x-6 text-[0.8125rem] font-medium transition-colors duration-500",
           scrolled ? "text-white/80" : "text-gray-600"
         )}>
           <Link href="#why" className={cn("transition-colors duration-200", scrolled ? "hover:text-white" : "hover:text-primary")}>Why SyncTalents</Link>

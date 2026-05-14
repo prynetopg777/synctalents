@@ -10,9 +10,9 @@ import {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative bg-white overflow-hidden lg:min-h-[90vh] flex items-center">
+    <section id="hero" className="relative bg-white overflow-hidden lg:min-h-[85vh] flex items-center pt-[var(--header-height)]">
       {/* Right-side image - positioned absolutely to fill right half */}
-      <div className="hidden lg:block absolute top-0 right-0 w-[60%] h-full z-0">
+      <div className="hidden lg:block absolute top-0 right-0 w-[58%] h-full z-0">
         <img
           src="/images/final_team_hero.png"
           alt="SyncTalents Team"
@@ -22,25 +22,25 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent w-[30%]"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 max-w-[1600px]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start py-12 lg:py-32 xl:py-40">
+      <div className="container mx-auto px-4 relative z-10 max-w-[var(--container-max)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start py-8 lg:py-20 xl:py-24">
 
           {/* Left Content - col 1-5 */}
           <div className="lg:col-span-5 py-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 text-blue-700 text-[10px] font-bold uppercase tracking-widest mb-6 border border-blue-100">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 text-blue-700 text-[0.625rem] font-bold uppercase tracking-widest mb-6 border border-blue-100">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
               Staffing & Outsourcing Solutions
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold text-[#0d3a71] mb-6 leading-[1.05] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[clamp(3rem,5vw,4.5rem)] font-extrabold text-[#0d3a71] mb-6 leading-[1.05] tracking-tight">
               Hire Pre-Vetted<br />
               Filipino Staff<br />
               <span className="text-blue-600">in 7 Days</span>
             </h1>
 
-            <p className="text-base text-gray-500 mb-8 max-w-md leading-relaxed">
+            <p className="text-lg lg:text-xl text-gray-500 mb-8 max-w-lg leading-relaxed font-medium">
               Reduce hiring costs by up to 70% while scaling your team with skilled, reliable professionals.
             </p>
 
@@ -56,12 +56,12 @@ export default function Hero() {
                       <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"></path>
                     </svg>
                   </div>
-                  <span className="text-sm font-semibold text-gray-700">{item}</span>
+                  <span className="text-base font-semibold text-gray-700">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="text-xs text-gray-400 font-medium">
+            <p className="text-sm text-gray-400 font-medium">
               Trusted by growing companies in the Philippines<br />and around the world.
             </p>
           </div>
@@ -76,11 +76,11 @@ export default function Hero() {
           </div>
 
           {/* Right Form - pushed to far right, overlapping the image area */}
-          <div className="lg:col-span-7 flex justify-center lg:justify-end">
-            <div className="bg-white rounded-2xl p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100 w-full sm:max-w-[400px] lg:max-w-[370px] relative z-20 lg:-mr-8">
+          <div className="lg:col-span-7 flex justify-center lg:justify-end lg:pr-12">
+            <div className="bg-white rounded-2xl p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100 w-full sm:max-w-[25rem] lg:max-w-[23.125rem] relative z-20">
               <div className="text-center mb-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-1 tracking-tight">Get Qualified Candidates</h3>
-                <p className="text-[11px] text-gray-400">Tell us what you need and we&apos;ll take care of the rest.</p>
+                <p className="text-[0.6875rem] text-gray-400">Tell us what you need and we&apos;ll take care of the rest.</p>
               </div>
 
               <form className="space-y-4">
@@ -106,7 +106,7 @@ export default function Hero() {
                       <SelectTrigger className="bg-gray-50/50 border-gray-200 focus:bg-white h-10 rounded-lg text-xs">
                         <SelectValue placeholder="Select role" />
                       </SelectTrigger>
-                      <SelectContent className="min-w-[280px]">
+                      <SelectContent className="min-w-[17.5rem]">
                         <SelectItem value="support">🧑‍💼 Customer Support & CX</SelectItem>
                         <SelectItem value="va">🖥️ Virtual Assistants (VA)</SelectItem>
                         <SelectItem value="admin">📊 Back Office & Admin</SelectItem>
@@ -143,16 +143,16 @@ export default function Hero() {
               <div className="mt-6">
                 <div className="relative flex py-1 items-center">
                   <div className="flex-grow border-t border-gray-100"></div>
-                  <span className="flex-shrink mx-3 text-gray-400 text-[9px] font-bold uppercase tracking-widest">or</span>
+                  <span className="flex-shrink mx-3 text-gray-400 text-[0.5625rem] font-bold uppercase tracking-widest">or</span>
                   <div className="flex-grow border-t border-gray-100"></div>
                 </div>
 
                 <div className="flex gap-3 mt-4">
-                  <Button variant="outline" className="flex-1 h-10 border-green-200 text-green-700 hover:bg-green-50 text-[10px] font-bold gap-2 rounded-lg transition-all">
+                  <Button variant="outline" className="flex-1 h-10 border-green-200 text-green-700 hover:bg-green-50 text-[0.625rem] font-bold gap-2 rounded-lg transition-all">
                     <img alt="WhatsApp" className="w-4 h-4" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
                     Chat on WhatsApp
                   </Button>
-                  <Button variant="outline" className="flex-1 h-10 border-blue-200 text-blue-700 hover:bg-blue-50 text-[10px] font-bold gap-2 rounded-lg transition-all">
+                  <Button variant="outline" className="flex-1 h-10 border-blue-200 text-blue-700 hover:bg-blue-50 text-[0.625rem] font-bold gap-2 rounded-lg transition-all">
                     <img alt="Messenger" className="w-4 h-4" src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" />
                     Message Us
                   </Button>

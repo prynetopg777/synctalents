@@ -19,15 +19,15 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-16 lg:py-32 xl:py-40 bg-[#fdfcfb]">
-      <div className="container mx-auto px-6 max-w-[1600px]">
+    <section id="faq" className="py-[var(--section-py)] bg-[#fdfcfb]">
+      <div className="container mx-auto px-6 max-w-[var(--container-max)]">
         
         {/* Header Section */}
         <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-20">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] lg:text-xs font-bold uppercase tracking-widest mb-6">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[0.625rem] lg:text-xs font-bold uppercase tracking-widest mb-6">
             SyncTalents FAQ
           </span>
-          <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 lg:mb-8 tracking-tight">
+          <h2 className="text-3xl lg:text-[clamp(2.5rem,5vw,3.5rem)] font-black text-gray-900 mb-6 lg:mb-8 tracking-tight">
             We&apos;re here to answer <br className="hidden lg:block" />
             all your questions.
           </h2>
@@ -58,7 +58,7 @@ export default function FAQ() {
 
         {/* Footer CTA */}
         <div className="mt-16 lg:mt-20 text-center">
-          <p className="text-[10px] lg:text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+          <p className="text-[0.625rem] lg:text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
             Still have questions?
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
