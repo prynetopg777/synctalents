@@ -37,7 +37,7 @@ export default function Footer() {
                 { name: "Roles We Fill", href: "#roles" },
                 { name: "How It Works", href: "#how-it-works" },
                 { name: "FAQs", href: "#faq" },
-                { name: "Contact Us", href: "#hero" }
+                { name: "Contact Us", href: "#lead-form" }
               ].map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="hover:text-accent transition duration-200">

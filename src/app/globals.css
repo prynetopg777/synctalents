@@ -139,4 +139,21 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.03);
     transform: translateY(-2px);
   }
-}
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 2rem)); /* Adjust to match the gap between duplicated sets */
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+}

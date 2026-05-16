@@ -11,36 +11,40 @@ import {
 export default function Hero() {
   return (
     <section id="hero" className="relative bg-white overflow-hidden lg:min-h-[85vh] flex items-center pt-[var(--header-height)]">
-      {/* Right-side image - positioned absolutely to fill right half */}
-      <div className="hidden lg:block absolute top-0 right-0 w-[58%] h-full z-0">
-        <img
-          src="/images/final_team_hero.png"
-          alt="SyncTalents Team"
-          className="h-full w-full object-cover object-[25%_25%]"
-        />
-        {/* Narrower left-edge fade to reveal more faces */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent w-[30%]"></div>
+      {/* Background Image Container */}
+      <div className="hidden lg:block absolute inset-0 z-0 bg-[#061b36] pointer-events-none">
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src="/images/new_hero.png"
+            alt="SyncTalents Team"
+            className="h-full w-full object-cover object-center"
+          />
+          {/* Dark gradient overlay restricted to left side to keep center subject fully visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#061b36]/95 via-[#061b36]/70 to-transparent w-[45%]"></div>
+          {/* Subtle global dark overlay for better overall contrast */}
+          <div className="absolute inset-0 bg-black/10"></div>
+        </div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 max-w-[var(--container-max)]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start py-8 lg:py-20 xl:py-24">
 
           {/* Left Content - col 1-5 */}
-          <div className="lg:col-span-5 py-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 text-blue-700 text-[0.625rem] font-bold uppercase tracking-widest mb-6 border border-blue-100">
+          <div className="lg:col-span-5 py-4 lg:ml-8 xl:ml-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 lg:bg-blue-900/40 text-blue-700 lg:text-blue-200 text-[0.625rem] font-bold uppercase tracking-widest mb-6 border border-blue-100 lg:border-blue-700/50 backdrop-blur-sm">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
               Staffing & Outsourcing Solutions
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[clamp(3rem,5vw,4.5rem)] font-extrabold text-[#0d3a71] mb-6 leading-[1.05] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[clamp(3rem,5vw,4.5rem)] font-extrabold text-[#0d3a71] lg:text-white mb-6 leading-[1.05] tracking-tight drop-shadow-sm">
               Hire Pre-Vetted<br />
               Filipino Staff<br />
-              <span className="text-blue-600">in 7 Days</span>
+              <span className="text-blue-600 lg:text-blue-400">in 7 Days</span>
             </h1>
 
-            <p className="text-lg lg:text-xl text-gray-500 mb-8 max-w-lg leading-relaxed font-medium">
+            <p className="text-lg lg:text-xl text-gray-500 lg:text-blue-50 mb-8 max-w-lg leading-relaxed font-medium drop-shadow-sm">
               Reduce hiring costs by up to 70% while scaling your team with skilled, reliable professionals.
             </p>
 
@@ -51,17 +55,17 @@ export default function Hero() {
                 "Flexible roles for your business needs"
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-600 lg:bg-blue-500 flex items-center justify-center shadow-sm">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"></path>
                     </svg>
                   </div>
-                  <span className="text-base font-semibold text-gray-700">{item}</span>
+                  <span className="text-base font-semibold text-gray-700 lg:text-white drop-shadow-sm">{item}</span>
                 </li>
               ))}
             </ul>
 
-            <p className="text-sm text-gray-400 font-medium">
+            <p className="text-sm text-gray-400 lg:text-blue-200/80 font-medium">
               Trusted by growing companies in the Philippines<br />and around the world.
             </p>
           </div>
@@ -76,11 +80,11 @@ export default function Hero() {
           </div>
 
           {/* Right Form - pushed to far right, overlapping the image area */}
-          <div className="lg:col-span-7 flex justify-center lg:justify-end lg:pr-12">
-            <div className="bg-white rounded-2xl p-6 md:p-7 shadow-[0_8px_40px_rgba(0,0,0,0.08)] border border-gray-100 w-full sm:max-w-[25rem] lg:max-w-[23.125rem] relative z-20">
+          <div className="lg:col-span-7 flex justify-center lg:justify-end lg:pr-8 xl:pr-16">
+            <div id="lead-form" className="bg-white rounded-[1.5rem] p-6 md:p-8 shadow-[0_30px_100px_rgba(13,58,113,0.25)] border-2 border-blue-100 w-full sm:max-w-[25rem] lg:max-w-[26rem] relative z-20 scroll-mt-24 transform transition-all hover:shadow-[0_35px_110px_rgba(13,58,113,0.3)]">
               <div className="text-center mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-1 tracking-tight">Get Qualified Candidates</h3>
-                <p className="text-[0.6875rem] text-gray-400">Tell us what you need and we&apos;ll take care of the rest.</p>
+                <h3 className="text-2xl font-black text-[#0d3a71] mb-2 tracking-tight">Get Qualified Candidates</h3>
+                <p className="text-xs text-gray-500 font-medium">Tell us what you need and we&apos;ll take care of the rest.</p>
               </div>
 
               <form className="space-y-4">
@@ -135,7 +139,7 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-accent hover:bg-orange-600 text-white font-bold py-6 rounded-lg shadow-md transition-all uppercase text-xs tracking-widest mt-1">
+                <Button className="w-full bg-accent hover:bg-green-600 active:bg-green-700 text-white font-black py-6 md:py-7 rounded-xl shadow-xl hover:shadow-green-600/30 hover:-translate-y-1 transition-all uppercase text-[0.75rem] md:text-xs tracking-widest mt-4">
                   Get Qualified Candidates
                 </Button>
               </form>

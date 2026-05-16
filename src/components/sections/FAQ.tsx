@@ -63,7 +63,7 @@ export default function FAQ() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link 
-              href="#hero"
+              href="#lead-form"
               className={cn(
                 buttonVariants({ variant: "default" }),
                 "w-full sm:w-auto bg-[#0d3a71] hover:bg-blue-900 text-white font-black px-10 py-7 lg:py-8 rounded-xl transition-all duration-300 text-sm lg:text-base shadow-lg shadow-blue-900/10 h-auto"

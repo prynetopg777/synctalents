@@ -8,19 +8,49 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="py-12 lg:py-20 xl:py-28 bg-white border-b border-gray-100">
-      <div className="container mx-auto px-4 max-w-[var(--container-max)] text-center">
-        <h2 className="text-[0.625rem] font-black text-gray-400 uppercase tracking-[0.25em] mb-8">Trusted By Growing Companies</h2>
-        <div className="flex flex-nowrap justify-start md:justify-center items-center gap-8 md:gap-16 lg:gap-20 overflow-x-auto pb-4 md:pb-0 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full px-2 md:px-0">
-          {logos.map((logo) => (
-            <img
-              key={logo.name}
-              src={logo.src}
-              alt={logo.name}
-              className="h-8 sm:h-10 md:h-16 lg:h-20 grayscale hover:grayscale-0 transition-all duration-300 object-contain shrink-0"
-            />
-          ))}
+    <section className="py-12 lg:py-20 xl:py-24 bg-white border-b border-gray-100 overflow-hidden relative">
+      <div className="container mx-auto px-4 max-w-[var(--container-max)] text-center relative z-10">
+        <div className="mb-8 md:mb-12">
+          <span className="text-accent font-black uppercase tracking-[0.4em] text-[0.65rem] md:text-xs mb-3 block">Proven Track Record</span>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-[#0d3a71] tracking-tight">
+            Trusted By <span className="text-blue-600">Growing Companies</span>
+          </h2>
         </div>
+        
+        {/* Marquee Container */}
+        <div className="relative flex overflow-hidden group/marquee w-full mt-10 md:mt-16 pt-8">
+          {/* Fading edges for premium effect */}
+          <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
+          
+          {/* Animated scrolling track */}
+          <div className="flex shrink-0 animate-marquee gap-16 md:gap-24 lg:gap-32 items-center">
+            {/* First set of logos */}
+            {logos.map((logo) => (
+              <img
+                key={`first-${logo.name}`}
+                src={logo.src}
+                alt={logo.name}
+                className="h-12 sm:h-14 md:h-20 lg:h-24 grayscale hover:grayscale-0 transition-all duration-700 object-contain opacity-50 hover:opacity-100 hover:scale-110"
+              />
+            ))}
+            {/* Duplicate set for seamless infinite scroll */}
+            {logos.map((logo) => (
+              <img
+                key={`second-${logo.name}`}
+                src={logo.src}
+                alt={logo.name}
+                className="h-12 sm:h-14 md:h-20 lg:h-24 grayscale hover:grayscale-0 transition-all duration-700 object-contain opacity-50 hover:opacity-100 hover:scale-110"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      
+      {/* Subtle background text */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10vw] md:text-[15vw] font-black text-gray-50/50 pointer-events-none whitespace-nowrap z-0 select-none">
+        PARTNERSHIPS
       </div>
     </section>
   );

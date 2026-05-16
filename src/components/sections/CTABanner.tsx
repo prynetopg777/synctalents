@@ -42,10 +42,10 @@ export default function CTABanner() {
           </div>
 
           <Link
-            href="#get-started"
+            href="#lead-form"
             className={cn(
               buttonVariants({ variant: "default", size: "lg" }),
-              "bg-accent hover:bg-orange-600 text-white font-bold px-12 py-7 rounded-xl text-xl hover:-translate-y-1 transition-all duration-300 shadow-xl hover:shadow-2xl mb-4 w-full md:w-auto h-auto relative z-10"
+              "bg-accent hover:bg-orange-600 text-white font-bold px-8 md:px-12 py-5 md:py-7 rounded-xl text-lg md:text-xl hover:-translate-y-1 transition-all duration-300 shadow-xl hover:shadow-2xl mb-4 w-full md:w-auto h-auto relative z-10"
             )}
           >
             Get Qualified Candidates Now
